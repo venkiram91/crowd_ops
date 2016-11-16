@@ -94,9 +94,44 @@ else
 {
 ?>	
 <html>
-<p>
-round 2
-</p>
+
+<body>
+
+<h1>HERE IS THE FIRST VIDEO !!!</h1>
+
+
+<?php
+
+
+echo '<iframe title="YouTube video player" class="youtube-player" type="text/html" 
+width="640" height="390" src='.$_SESSION['video_url'].'
+frameborder="0" allowFullScreen></iframe>'
+?>
+</br>
+
+<p2>Round 2 FOLLOWING ARE YOUR QUESTIONS</p2>
+
+<form action="answers.php" method="post">
+<ul>
+    <li>Who is playing the match?</li>
+    <li>Number of goals? </li>
+    <li>Which team won the match?</li>
+    <li>How many blocked shots were there?</li>
+    <li>How many missed shots were happened? </li>
+    <li>How many give_aways?</li>
+	<li>How many take_aways?</li>
+	<li>Which players scored goals?</li>
+
+
+</ul>
+<input type="submit" value="submit answers" />
+</form>
+<div style="text-align:center;">
+<form action="video_2.html">
+    <input type="submit" value="Go to next video" />
+</form>
+
+</body>
 </html>
 <?php
 }
