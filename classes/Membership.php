@@ -34,9 +34,29 @@ class Membership {
 		
 		return $ensure_credentials;
 
+	} 
+	function get_answers($question_id,$video_id) {
+		$mysql = New Mysql();
+		$ensure_credentials = $mysql->get_answers($question_id,$video_id);
 		
-		
+		return $ensure_credentials;
+
 	} 
 	
+		function insert_answers2($id) {
+		$mysql = New Mysql();
+		$ensure_credentials = $mysql->insert_answers2($id);
+		
+		return $ensure_credentials;
+
+	} 
+	
+		function get_video_result() {
+		$mysql = New Mysql();
+		$ensure_credentials = $mysql->get_video_result();
+		
+		return $ensure_credentials;
+
+	}
 	
 }
