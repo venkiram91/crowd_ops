@@ -111,21 +111,18 @@ frameborder="0" allowFullScreen></iframe>'
 
 <p2>Round 2 FOLLOWING ARE YOUR QUESTIONS</p2>
 
-<form action="answers.php" method="post">
-<ul>
-    <li>Who is playing the match?</li>
-    <li>Number of goals? </li>
-    <li>Which team won the match?</li>
-    <li>How many blocked shots were there?</li>
-    <li>How many missed shots were happened? </li>
-    <li>How many give_aways?</li>
-	<li>How many take_aways?</li>
-	<li>Which players scored goals?</li>
+
+    
+	<?php
+	$question_id=1;
+	$video_id=$_SESSION['video_id'];
+	$response = $membership->get_answers($question_id,$video_id);
+	
+	?>
 
 
-</ul>
-<input type="submit" value="submit answers" />
-</form>
+
+
 <div style="text-align:center;">
 <form action="video_2.html">
     <input type="submit" value="Go to next video" />
