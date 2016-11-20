@@ -208,7 +208,7 @@ session_start();
 			#print 'hi'.$_SESSION['user_id'];
 			$user_id=$_SESSION['user_id'];
 		    $video_id=$rows['video_id'];
-			$statement1 = $this->dbConnection->prepare('SELECT count(*) as mapping_count FROM uder_video_mapping where user_id=:user_id and video_id=:video_id');
+			$statement1 = $this->dbConnection->prepare('SELECT count(*) as mapping_count FROM login l left join uder_video_mapping uvm on l.user_id=uvm.user_id left join round_2_users ru on ru.user_id=l.user_id where l.user_id=:user_id and ((uvm.user_id is not null and uvm.video_id=:video_id) OR (ru.user_id is not null and ru.video_id=:video_id))');
 			$statement1->bindParam(':user_id',$user_id);
 			$statement1->bindParam(':video_id',$video_id);	
 			if($statement1->execute())
@@ -216,7 +216,7 @@ session_start();
 				foreach ($statement1 as $rows1)
 				{
 					$loop_count=$rows1['mapping_count'];
-					$statement2 = $this->dbConnection->prepare('SELECT count(*) as video_count FROM video_details vd where not exists (select 1 from uder_video_mapping uvm where uvm.user_id=:user_id and uvm.video_id=vd.video_id)');
+					$statement2 = $this->dbConnection->prepare('SELECT count(*) as video_count FROM video_details vd where not exists (select 1 from login l left join uder_video_mapping uvm on l.user_id=uvm.user_id left join round_2_users ru on ru.user_id=l.user_id where l.user_id=:user_id and ((uvm.user_id is not null and uvm.video_id=vd.video_id) OR (ru.user_id is not null and ru.video_id=vd.video_id)))');
 					$statement2->bindParam(':user_id',$user_id);
 					if($statement2->execute())
 					{
@@ -248,10 +248,73 @@ session_start();
 			}
 		 }
        }
+
 	}
 	return 0;
  }
+  function get_answers($question_id,$video_id)
+ {
+	$statement = $this->dbConnection->prepare('SELECT uvm.id,uvm.answer_team_a,uvm.answer_team_b,qm.question from uder_video_mapping uvm,question_master qm where uvm.question_id=qm.question_id and uvm.video_id=:video_id order by uvm.question_id asc');
+	$statement->bindParam(':video_id', $video_id);
+	if($statement->execute())
+  {
+	  $flag=0;
+	  ?>
+	<form action="answers2.php" method="post"> 
+	<table>
+	<?php
+foreach ($statement as $rows)
+  {	
+   if ($flag%5==0)
+   {
+	   echo '<tr><td><b>'.$rows['question'].'</b></td><td></td><td></td></tr>';
+   }
+   echo '<tr><td>'.$rows['answer_team_a'].'</td><td>'.$rows['answer_team_b'].'</td><td><input type="checkbox" name="id[]" value="'.$rows["id"].'"/> </td></tr>';
+   $flag=$flag+1;
+  }
+   ?>
+
+	</table>
+
+<input type="submit" value="submit answers" />
+</form>
+		<?php
+  }
+ }
  
+ function insert_answers2($id1) {
+	 if (!isset($_SESSION)) {
+
+session_start();
+	 }
+	 $count=count($id1)-1;
+	 while($count>=0)
+	 {
+		 
+		 $id=$id1[$count];
+		 $statement = $this->dbConnection->prepare('update uder_video_mapping set vote=vote+1 where id=:id');
+		 $statement->bindParam(':id', $id); 
+		 $statement->execute();
+		 $count=$count-1;
+
+	 }
+		 $statement = $this->dbConnection->prepare('update video_details set count=count+1 where video_id=:video_id');
+		 $video_id=$_SESSION['video_id'];
+		 $statement->bindParam(':video_id', $video_id); 
+		 $statement->execute();	
+		 
+		 $statement = $this->dbConnection->prepare('insert into round_2_users(user_id,video_id) values(:user_id,:video_id)');
+		 $video_id=$_SESSION['video_id'];
+		 $user_id=$_SESSION['user_id'];
+		 $statement->bindParam(':user_id', $user_id); 
+		 $statement->bindParam(':video_id', $video_id); 
+		 $statement->execute();			 
+		 return 1;
+	 
+ }
+ function get_video_result() {
+	 
+ }
 }
 
 ?>
