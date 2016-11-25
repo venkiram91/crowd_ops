@@ -205,14 +205,21 @@ session_start();
        {
 		   	  foreach ($statement as $rows)
 			{
-			#print 'hi'.$_SESSION['user_id'];
+			
 			$user_id=$_SESSION['user_id'];
 		    $video_id=$rows['video_id'];
-			$statement1 = $this->dbConnection->prepare('SELECT count(*) as mapping_count FROM login l left join uder_video_mapping uvm on l.user_id=uvm.user_id left join round_2_users ru on ru.user_id=l.user_id where l.user_id=:user_id and ((uvm.user_id is not null and uvm.video_id=:video_id) OR (ru.user_id is not null and ru.video_id=:video_id))');
+			print $video_id;
+			print $user_id;
+			
+			$statement1 = $this->dbConnection->prepare('SELECT count(*) as mapping_count FROM login l left join uder_video_mapping uvm on l.user_id=uvm.user_id left join round_2_users ru on ru.user_id=l.user_id where l.user_id=:user_id and ((uvm.user_id is not null and uvm.video_id=:video_id1)OR (ru.user_id is not null and ru.video_id=:video_id2))');
+		
 			$statement1->bindParam(':user_id',$user_id);
-			$statement1->bindParam(':video_id',$video_id);	
+			$statement1->bindParam(':video_id1',$video_id);
+			$statement1->bindParam(':video_id2',$video_id);
+		
 			if($statement1->execute())
 			{
+
 				foreach ($statement1 as $rows1)
 				{
 					$loop_count=$rows1['mapping_count'];
@@ -313,7 +320,12 @@ session_start();
 	 
  }
  function get_video_result() {
-	 
+	 $statement = $this->dbConnection->prepare('select video_id from video_details');
+	 if($statement->execute())
+	 {
+		 
+	 }
+		 
  }
 }
 
