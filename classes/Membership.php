@@ -59,4 +59,13 @@ class Membership {
 
 	}
 	
+	function get_video_annotation($video_id) {
+		$mysql = New Mysql();
+		$ensure_credentials = $mysql->get_video_annotation($video_id);
+		
+		return $ensure_credentials;
+
+	}
+	
+	
 }

@@ -320,13 +320,59 @@ session_start();
 	 
  }
  function get_video_result() {
-	 $statement = $this->dbConnection->prepare('select video_id from video_details');
+	 $statement = $this->dbConnection->prepare('select video_id,image_path,video_name from video_details where count=6');
 	 if($statement->execute())
 	 {
+		 foreach ($statement as $rows)
+  {
+		 $video_id=$rows['video_id'];
+		 $image_path=$rows['image_path'];
+		 $video_name=$rows['video_name'];
+
+	echo "<table><tr><th><img src='".$image_path."' height='200' width='250'></th><th><a href='annotation.php?id=".$video_id."'>".$video_name."</a></th></tr><br>";
+
+		 
+  }
 		 
 	 }
 		 
  }
+ 
+  function get_video_annotation($video_id) {
+	  
+	  echo '<p><iframe title="YouTube video player" class="youtube-player" type="text/html" 
+width="640" height="390" src="videos/'.$video_id.'.mp4" frameborder="0" allowFullScreen></iframe></p>';
+
+
+	  
+$statement = $this->dbConnection->prepare('select question_id,question from question_master');
+if($statement->execute())
+{
+	echo '<table border=1><tr><th>Question</th><th>Team A</th><th>Team B</th></tr>';
+	foreach ($statement as $rows)
+  {
+	  
+	  echo '<tr><th>'.$rows['question'].'</th>';
+	  $statement1 = $this->dbConnection->prepare('select answer_team_a,answer_team_b from uder_video_mapping where question_id=:question_id1 and video_id=:video_id1 and vote=(select max(vote) from uder_video_mapping where question_id=:question_id2 and video_id=:video_id2)');
+	  $statement1->bindParam(':question_id1', $rows['question_id']); 
+	  $statement1->bindParam(':question_id2', $rows['question_id']); 
+	  $statement1->bindParam(':video_id1', $video_id); 
+	  $statement1->bindParam(':video_id2', $video_id);
+	  if($statement1->execute())
+	  {
+		  	foreach ($statement1 as $rows)
+  {
+	  echo '<th>'.$rows['answer_team_a'].'</th><th>'.$rows['answer_team_b'].'</th></tr>';
+  }
+	  }
+
+}
+
+echo '</table>';
+		 
+ }
+ 
+}
 }
 
 ?>
