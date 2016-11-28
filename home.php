@@ -1,49 +1,128 @@
-<?php 
+<!DOCTYPE html>
+<?php
 
 if (!isset($_SESSION)) {
-
 session_start();
-
-
-
 if(isset($_SESSION['email_id']))
-
 {
-
 ?>
-<html>
 
+<html>
 <body>
+<head>
+	<title>Hockey Annotation</title>
+	<meta charset="utf-8">
+	<link href="css/style.css" rel="stylesheet" type="text/css">
+	<!--[if IE 7]>
+		<link href="css/ie7.css" rel="stylesheet" type="text/css">
+
+	<![endif]-->
+</head>
+<body>
+	<div id="header">
+		
+			<div id ="content">
+				<img src="images/logo_canada.png" alt=""width="144" height="134 align="left"/>	
+						
+
+
+
+						<ul class="navigation">
+				<li>
+					<a class="active" href="home.php">Home</a>
+				</li>
+				<li>
+					<a href="about.html">About</a>
+				</li>
+				<li>
+					<a href="Yes_page.php">Video Annotation</a>
+				</li>
+				
+				<li>
+					<a href="blog.html">Blog</a>
+				</li>
+				<li>
+					<a href="get_answers.php">ANNOTATED VIDEOS</a>
+				</li>
+				<li>
+					<a href="signout.php">SIGN OUT</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+
 <meta http-equiv=Content-Type content="text/html; charset=windows-1252">
 <div style="text-align:center;">
     <img src="image.png">
 </div>
-<h1>WELCOME TO THE VIDEO ANNOTATION TASK! WE WOULD LIKE YOU TO HELP US ANNOTATE SOME VIDEOS</h1>
-<div style="text-align:center;">
+<br>
 
-<h2>ARE YOU WILLING TO HELP ?</h2>
-
-<form action="Yes_page.php">
-    <input type="submit" value="YES ! ABSOLUTELY" />
-</form>
-
-<form action="No_page.php">
-    <input type="submit" value="NO! I DON'T HAVE TIME" />
-</form>
-
+	<div id="body">
+		<div id="featured"> <a href="index.html"><img src="images/hk_main.png" width="974" height="614" alt=""> </a>
+					</div>
+<div id="body">
+<img src="images/logos/calg_flames.png" style="position: absolute; top: 200px; left: 100px;">
 </div>
+
+	</div>
+	<div id="footer">
+		<div>
+			<div class="section">
+				<div>
+					<div>
+						<ul>
+							<li class="first">
+								<h2>Blog</h2>
+								<p>
+									This is just a place holder, so you can see what the site would look like. <a href="blog.html" class="readmore">(more)</a>
+								</p>
+							</li>
+							<li>
+								<h2>get in touch</h2>
+								<ul class="connect">
+									<li>
+										<a href="http://www.freewebsitetemplates.com/go/facebook/" class="facebook">&nbsp;</a>
+									</li>
+									<li>
+										<a href="http://www.freewebsitetemplates.com/go/twitter/" class="twitter">&nbsp;</a>
+									</li>
+									<li>
+										<a href="http://www.freewebsitetemplates.com/misc/contact" class="googleplus">&nbsp;</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="footnote">
+				<p>
+					&copy; Copyright 2012. All rights reserved.
+				</p>
+			</div>
+		</div>
+	</div>
+
+<div class="wrap center"> <!-- Just to center ver and hor -->
+  <div class="wrap-label">
+     <label for="name">Your Name</label>
+     <p class="iconicfill-pen-alt2"></p>
+  </div>
+  <input type="text" id="name" >
+</div>
+
+
+
 </body>
+
+
 </html>
+
 <?php
-
 }
-
 else 
-
 {
-
 header("location:index.php");
-
 }
 }
 ?>
