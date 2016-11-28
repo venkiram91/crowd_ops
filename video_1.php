@@ -19,20 +19,74 @@ if($response==2)
 if($_SESSION['round']==1)
 {
 
+
 ?>
 <html>
 
-<body>
 
-<h1>HERE IS THE FIRST VIDEO !!!</h1>
+
+<style>
+
+body {
+    color: white;
+    left: 100 px;;
+    
+}
+</style>
+
+<head>
+	<title>Hockey Annotation</title>
+	<meta charset="utf-8">
+	<link href="css/style.css" rel="stylesheet" type="text/css">
+	<!--[if IE 7]>
+		<link href="css/ie7.css" rel="stylesheet" type="text/css">
+	<![endif]-->
+</head>
+
+
+<body>
+<body>
+	<div id="header">
+
+		<div id ="content">
+			<img src="images/logo_canada.png" alt=""width="144" height="134 align="left"/>	
+					
+
+
+<ul class="navigation">
+				<li>
+					<a class="active" href="home.php">Home</a>
+				</li>
+				<li>
+					<a href="about.html">About</a>
+				</li>
+				<li>
+					<a href="Yes_page.php">Video Annotation</a>
+				</li>
+				
+				<li>
+					<a href="blog.html">Blog</a>
+				</li>
+				<li>
+					<a href="get_answers.php">ANNOTATED VIDEOS</a>
+				</li>
+				<li>
+					<a href="signout.php">SIGN OUT</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+
+
 
 
 <?php
 
 
-echo '<iframe title="YouTube video player" class="youtube-player" type="text/html" 
+echo '<iframe title="YouTube video player" class="youtube-player"  type="text/html" 
 width="640" height="390" src='.$_SESSION['video_url'].'
-frameborder="0" allowFullScreen></iframe>'
+frameborder="0" allowFullScreen align="right"></iframe>'
 ?>
 </br>
 
@@ -56,6 +110,7 @@ frameborder="0" allowFullScreen></iframe>'
   </select>
   <li>Number of goals? </li>
 	<label>Team A Goals </label><input type="text" name="team_a_goals" /> 
+<br>
 	<label>Team B Goals </label><input type="text" name="team_b_goals" /> 
    <li>Which team won the match?</li>
 	<select name="winning_team">
@@ -64,18 +119,23 @@ frameborder="0" allowFullScreen></iframe>'
 	</select>
     <li>How many blocked shots were there?</li>
 	<label>Team A blocked_shots </label><input type="text" name="team_a_blocked" /> 
+	<br>
 	<label>Team B blocked_shots </label><input type="text" name="team_b_blocked" />
     <li>How many missed shots were happened? </li>
 	<label>Team A missed_shots </label><input type="text" name="team_a_missed" /> 
+	<br>
 	<label>Team B missed_shots </label><input type="text" name="team_b_missed" />
    <li>How many give_aways?</li>
-	<label>Team A give_away </label><input type="text" name="team_a_give_away" /> 
+	<label>Team A give_away </label><input type="text" name="team_a_give_away" />
+	<br> 
 	<label>Team B give_away </label><input type="text" name="team_b_give_away" />
 	<li>How many take_aways?</li>
 	<label>Team A take_away </label><input type="text" name="team_a_take_away" /> 
+	<br>
 	<label>Team B take_away </label><input type="text" name="team_b_take_away" />
 	<li>Which players scored goals?</li>
 	<label>Team A players </label><input type="text" name="team_a_players" /> 
+	<br>
 	<label>Team B players </label><input type="text" name="team_b_players" />
 
 </ul>
@@ -87,17 +147,66 @@ frameborder="0" allowFullScreen></iframe>'
 </form>
 
 </body>
+
 </html>
+
+
 <?php
 }
 else
 {
 ?>	
 <html>
+<style>
 
+body {
+    color: white;
+    left: 100 px;;
+    
+}
+</style>
+
+<head>
+	<title>Hockey Annotation</title>
+	<meta charset="utf-8">
+	<link href="css/style.css" rel="stylesheet" type="text/css">
+	<!--[if IE 7]>
+		<link href="css/ie7.css" rel="stylesheet" type="text/css">
+	<![endif]-->
+</head>
 <body>
+<div id="header">
 
-<h1>HERE IS THE FIRST VIDEO !!!</h1>
+		<div id ="content">
+			<img src="images/logo_canada.png" alt=""width="144" height="134" align="left"/>	
+					
+
+
+<ul class="navigation">
+				<li>
+					<a class="active" href="home.php">Home</a>
+				</li>
+				<li>
+					<a href="about.html">About</a>
+				</li>
+				<li>
+					<a href="Yes_page.php">Video Annotation</a>
+				</li>
+				
+				<li>
+					<a href="blog.html">Blog</a>
+				</li>
+				<li>
+					<a href="get_answers.php">ANNOTATED VIDEOS</a>
+				</li>
+				<li>
+					<a href="signout.php">SIGN OUT</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+
 
 
 <?php
@@ -105,7 +214,7 @@ else
 
 echo '<iframe title="YouTube video player" class="youtube-player" type="text/html" 
 width="640" height="390" src='.$_SESSION['video_url'].'
-frameborder="0" allowFullScreen></iframe>'
+frameborder="0" allowFullScreen align="right" ></iframe>'
 ?>
 </br>
 
@@ -130,6 +239,7 @@ frameborder="0" allowFullScreen></iframe>'
 
 </body>
 </html>
+
 <?php
 }
 }
@@ -139,7 +249,6 @@ else
 {
 
 header("location:index.php");
-
 }
 }
 ?>
