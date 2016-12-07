@@ -347,7 +347,8 @@ if($i%2==1){
 	 echo "</center></body></html>";
 	 }
 		 
- }
+
+ 
  
   function get_video_annotation($video_id) {
 	  
@@ -383,6 +384,7 @@ echo '</table>';
 		 
  }
  
+}
 }
 
 
