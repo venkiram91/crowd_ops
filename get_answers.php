@@ -39,7 +39,7 @@ body {
 
 <ul class="navigation">
 				<li>
-					<a class="active" href="home.php">Home</a>
+					<a href="home.php">Home</a>
 				</li>
 				<li>
 					<a href="about.html">About</a>
@@ -52,7 +52,7 @@ body {
 					<a href="blog.html">Blog</a>
 				</li>
 				<li>
-					<a href="get_answers.php">ANNOTATED VIDEOS</a>
+					<a class="active" href="get_answers.php">ANNOTATED VIDEOS</a>
 				</li>
 				<li>
 					<a href="signout.php">SIGN OUT</a>

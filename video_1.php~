@@ -99,16 +99,16 @@ frameborder="0" allowFullScreen align="right"></iframe>'
     <option value="Russia">Russia</option>
     <option value="USA">USA</option>
     <option value="Canada">Canada</option>
-    <option value="North America">North America</option>
-    <option value="Czech Republic">Czech Republic</option>
+    <option value="North_America">North America</option>
+    <option value="Czech_Republic">Czech Republic</option>
   </select>
   <label>Team B </label>
   <select name="team_b">
-    <option value="North America">North America</option>
+    <option value="North_America">North America</option>
     <option value="USA">USA</option>
     <option value="Canada">Canada</option>
     <option value="Russia">Russia</option>
-    <option value="Czech Republic">Czech Republic</option>
+    <option value="Czech_Republic">Czech Republic</option>
   </select>
   <li>Number of goals? </li>
 	<label>Team A Goals </label><input type="text" name="team_a_goals" /> 

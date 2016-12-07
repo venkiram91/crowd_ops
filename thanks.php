@@ -69,7 +69,7 @@ h3 {
 					<a href="about.html">About</a>
 				</li>
 				<li>
-					<a class="active" href="Yes_page.php">Video Annotation</a>
+					<a  href="Yes_page.php">Video Annotation</a>
 				</li>
 				<li>
 					<a href="blog.html">Blog</a>
@@ -78,7 +78,7 @@ h3 {
 					<a href="get_answers.php">ANNOTATED VIDEOS</a>
 				</li>
 				<li>
-					<a href="signout.php">SIGN OUT</a>
+					<a class="active" href="signout.php">SIGN OUT</a>
 				</li>
 			</ul>
 		</div>
@@ -88,27 +88,11 @@ h3 {
 		<div class="image"><a href="index.html"><img src="images/hk_main.png" width="974" height="614" class="transparent" alt=""> </a>
 
 <ul>
-<h2><font color="white"><li>THANK YOU FOR YOUR TIME !!! HERE IS WHAT YOU NEED TO DO !</li></h2>
+<h2><font color="white">THANK YOU FOR YOUR TIME !!!</h2>
+<br>
+<br>
+<h3><font color="white">ALL THE VIDEOS ARE ANNOTATED! YOU CAN TAKE SOME REST NOW :) !!</h3>
 </ul>
-
-<h3>
-<ul>
-  <li><font color="white">In the next few pages, you will be shown a video  of 1 - 1.5 minutes duration</li>
-  <li><font color="white">Please watch the video and then answer the questions which will appear below the video </li>
-  <li><font color="white">Please make sure that you answer the question according to the video</li>
-</ul>
-<p>Key Terms you will be needing in annotating the videos</p>
-<ul>
-  <li><font color="white">Giveaway: A giveaway is another term for a turnover. This is when the offensive player with the puck gets hit or makes a play (usually a pass) that causes their team to lose possession of the puck</li>
-  <li><font color="white">Takeaway: A takeaway occurs when pressure from the defending team results in a defending player gaining possession of the puck </li>
-  <li><font color="white">Blocked Shots:  A shot on goal that is being stopped by the goalkeeper for a save</li>
-  <li><font color="white">Missed Shots: A widely deflected shot on the goal post </li>
-</ul>
-</h3>
-
-<div style="text-align:center;">
-<form action="video_1.php">
-    <input type="submit" value="I Understood! Let's get started" />
 </form>
 </div>
 

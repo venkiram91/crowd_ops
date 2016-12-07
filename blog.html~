@@ -66,7 +66,27 @@
 				</div>
 				<div class="aside">
 					<h2>RECENT POST</h2>
-
+					<ul>
+						<li>
+							<a href="blog.html"> </a>
+						</li>
+						<li>
+							<a href="blog.html"></a>
+						</li>
+						<li>
+							<p>
+								
+							</p>
+						</li>
+						<li>
+							<a href="blog.html"></a>
+						</li>
+						<li>
+							<p>
+								
+							</p>
+						</li>
+					</ul>
 					<h2></h2>
 			
 				</div>

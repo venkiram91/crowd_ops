@@ -60,11 +60,31 @@ if(isset($_SESSION['email_id']))
 	<div id="body">
 		<div id="featured"> <a href="index.html"><img src="images/hk_main.png" width="974" height="614" alt=""> </a>
 					</div>
-<div id="body">
-<img src="images/logos/calg_flames.png" style="position: absolute; top: 200px; left: 100px;">
+
+					<div id="body">
+<img src="images/logos/calg_flames.png" style="position: absolute; top: 250px; left: 50px"; height="150" width="200">
 </div>
 
-	</div>
+<div id="body">
+<img src="images/logos/detroit.png" style="position: absolute; top: 420px; left: 50px"; height="150" width="200">
+</div>
+
+<div id="body">
+<img src="images/logos/mont_logo.png" style="position: absolute; top: 600px; left: 50px"; height="150" width="200">
+</div>
+
+<div id="body">
+<img src="images/logos/Phoenix.png" style="position: absolute; top: 250px; left: 1280px"; height="150" width="200">
+</div>
+
+<div id="body">
+<img src="images/logos/new_jers.png" style="position: absolute; top: 420px; left: 1280px"; height="150" width="200">
+</div>
+
+<div id="body">
+<img src="images/logos/was_cap.png" style="position: absolute; top: 600px; left: 1280px"; height="150" width="200">
+</div>
+</div>
 	<div id="footer">
 		<div>
 			<div class="section">
@@ -74,7 +94,7 @@ if(isset($_SESSION['email_id']))
 							<li class="first">
 								<h2>Blog</h2>
 								<p>
-									This is just a place holder, so you can see what the site would look like. <a href="blog.html" class="readmore">(more)</a>
+									An unique way of Video Annotation ! <a href="blog.html" class="readmore"></a>
 								</p>
 							</li>
 							<li>
