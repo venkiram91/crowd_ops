@@ -208,8 +208,8 @@ session_start();
 			
 			$user_id=$_SESSION['user_id'];
 		    $video_id=$rows['video_id'];
-			print $video_id;
-			print $user_id;
+			//print $video_id;
+			//print $user_id;
 			
 			$statement1 = $this->dbConnection->prepare('SELECT count(*) as mapping_count FROM login l left join uder_video_mapping uvm on l.user_id=uvm.user_id left join round_2_users ru on ru.user_id=l.user_id where l.user_id=:user_id and ((uvm.user_id is not null and uvm.video_id=:video_id1)OR (ru.user_id is not null and ru.video_id=:video_id2))');
 		
