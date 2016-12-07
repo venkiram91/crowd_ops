@@ -365,7 +365,7 @@ if($statement->execute())
   {
 	  
 	  echo '<tr><th>'.$rows['question'].'</th>';
-	  $statement1 = $this->dbConnection->prepare('select answer_team_a,answer_team_b from uder_video_mapping where question_id=:question_id1 and video_id=:video_id1 and vote=(select max(vote) from uder_video_mapping where question_id=:question_id2 and video_id=:video_id2)');
+	  $statement1 = $this->dbConnection->prepare('select answer_team_a,answer_team_b from uder_video_mapping where question_id=:question_id1 and video_id=:video_id1 and vote=(select max(vote) from uder_video_mapping where question_id=:question_id2 and video_id=:video_id2) limit 1');
 	  $statement1->bindParam(':question_id1', $rows['question_id']); 
 	  $statement1->bindParam(':question_id2', $rows['question_id']); 
 	  $statement1->bindParam(':video_id1', $video_id); 
